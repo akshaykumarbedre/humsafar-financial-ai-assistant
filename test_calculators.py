@@ -181,11 +181,188 @@ def test_net_worth_calculator():
     print()
 
 
+def test_retirement_corpus_calculator():
+    """Test Retirement Corpus Calculator"""
+    print("👴 Testing Retirement Corpus Calculator...")
+    result = retirement_corpus_calculator(
+        current_age=30,
+        retirement_age=60,
+        monthly_expenses=50000,
+        inflation_rate=6.0,
+        expected_return=12.0,
+        current_savings=100000
+    )
+    print(f"  Years to Retirement: {result['years_to_retirement']}")
+    print(f"  Future Monthly Expenses: ₹{result['future_monthly_expenses']}")
+    print(f"  Retirement Corpus Needed: ₹{result['retirement_corpus_needed']}")
+    print(f"  Monthly SIP Needed: ₹{result['monthly_sip_needed']}")
+    print()
+
+
+def test_child_education_goal_calculator():
+    """Test Child Education Goal Calculator"""
+    print("📚 Testing Child Education Goal Calculator...")
+    result = child_education_goal_calculator(
+        child_current_age=5,
+        education_age=18,
+        current_education_cost=500000,
+        inflation_rate=8.0,
+        expected_return=12.0,
+        current_savings=50000
+    )
+    print(f"  Years to Education: {result['years_to_education']}")
+    print(f"  Future Education Cost: ₹{result['future_education_cost']}")
+    print(f"  Monthly SIP Needed: ₹{result['monthly_sip_needed']}")
+    print(f"  Total Investment: ₹{result['total_investment']}")
+    print()
+
+
+def test_home_loan_affordability_calculator():
+    """Test Home Loan Affordability Calculator"""
+    print("🏡 Testing Home Loan Affordability Calculator...")
+    result = home_loan_affordability_calculator(
+        monthly_income=100000,
+        existing_emis=20000,
+        interest_rate=8.5,
+        loan_tenure_years=20,
+        foir_ratio=0.5
+    )
+    print(f"  Monthly Income: ₹{result['monthly_income']}")
+    print(f"  Available for EMI: ₹{result['available_for_emi']}")
+    print(f"  Max Loan Amount: ₹{result['max_loan_amount']}")
+    print(f"  Property Value: ₹{result['property_value']}")
+    print(f"  Recommendation: {result['recommendation']}")
+    print()
+
+
+def test_loan_prepayment_calculator():
+    """Test Loan Prepayment Calculator"""
+    print("💰 Testing Loan Prepayment Calculator...")
+    result = loan_prepayment_calculator(
+        outstanding_principal=2000000,
+        monthly_emi=25000,
+        interest_rate=8.5,
+        prepayment_amount=500000,
+        prepayment_type="reduce_tenure"
+    )
+    print(f"  Original Tenure: {result['original_tenure_months']} months")
+    print(f"  New Tenure: {result['new_tenure_months']} months")
+    print(f"  Interest Saved: ₹{result['interest_saved']}")
+    print(f"  New EMI: ₹{result['new_emi']}")
+    print(f"  Recommendation: {result['recommendation']}")
+    print()
+
+
+def test_income_tax_calculator():
+    """Test Income Tax Calculator"""
+    print("📊 Testing Income Tax Calculator...")
+    result = income_tax_calculator(
+        annual_salary=1200000,
+        standard_deduction=50000,
+        section_80c=150000,
+        section_80d=25000,
+        hra_received=240000,
+        rent_paid=300000,
+        other_deductions=50000
+    )
+    print(f"  Old Regime Tax: ₹{result['old_regime_tax']}")
+    print(f"  New Regime Tax: ₹{result['new_regime_tax']}")
+    print(f"  Tax Difference: ₹{result['tax_difference']}")
+    print(f"  Recommended Regime: {result['recommended_regime']}")
+    print()
+
+
+def test_lump_sum_investment_calculator():
+    """Test Lump Sum Investment Calculator"""
+    print("💎 Testing Lump Sum Investment Calculator...")
+    result = lump_sum_investment_calculator(
+        investment_amount=100000,
+        annual_return=12.0,
+        investment_years=10
+    )
+    print(f"  Investment Amount: ₹{result['investment_amount']}")
+    print(f"  Future Value: ₹{result['future_value']}")
+    print(f"  Total Gain: ₹{result['total_gain']}")
+    print(f"  Wealth Multiplier: {result['wealth_multiplier']}x")
+    print()
+
+
+def test_goal_based_multi_investment_planner():
+    """Test Goal-Based Multi-Investment Planner"""
+    print("🎯 Testing Goal-Based Multi-Investment Planner...")
+    goals = [
+        {"name": "House Down Payment", "target_amount": 2000000, "years": 7},
+        {"name": "Child Education", "target_amount": 1500000, "years": 15},
+        {"name": "Retirement", "target_amount": 10000000, "years": 25}
+    ]
+    result = goal_based_multi_investment_planner(goals=goals, expected_return=12.0)
+    print(f"  Total Monthly SIP: ₹{result['total_monthly_sip']}")
+    print(f"  Total Investment: ₹{result['total_investment']}")
+    print(f"  Total Maturity Value: ₹{result['total_maturity_value']}")
+    print(f"  Number of Goals: {len(result['goal_details'])}")
+    print()
+
+
+def test_debt_to_income_ratio_calculator():
+    """Test Debt-to-Income Ratio Calculator"""
+    print("📈 Testing Debt-to-Income Ratio Calculator...")
+    result = debt_to_income_ratio_calculator(
+        monthly_income=80000,
+        monthly_emis=25000,
+        credit_card_payments=5000,
+        other_debts=3000
+    )
+    print(f"  Monthly Income: ₹{result['monthly_income']}")
+    print(f"  Total Debt Payments: ₹{result['total_debt_payments']}")
+    print(f"  Debt-to-Income Ratio: {result['debt_to_income_ratio']}%")
+    print(f"  Risk Grade: {result['risk_grade']}")
+    print(f"  Recommendation: {result['recommendation']}")
+    print()
+
+
+def test_asset_allocation_rebalancer():
+    """Test Asset Allocation Rebalancer"""
+    print("⚖️ Testing Asset Allocation Rebalancer...")
+    result = asset_allocation_rebalancer(
+        current_age=35,
+        current_equity_percent=80,
+        current_debt_percent=20,
+        current_gold_percent=0,
+        risk_tolerance="moderate"
+    )
+    print(f"  Current Allocation: {result['current_allocation']}")
+    print(f"  Suggested Allocation: {result['suggested_allocation']}")
+    print(f"  Rebalancing Needed: {result['rebalancing_needed']}")
+    print(f"  Risk Profile: {result['risk_profile']}")
+    print(f"  Recommendation: {result['recommendation']}")
+    print()
+
+
+def test_capital_gains_tax_calculator():
+    """Test Capital Gains Tax Calculator"""
+    print("🏛️ Testing Capital Gains Tax Calculator...")
+    result = capital_gains_tax_calculator(
+        asset_type="equity",
+        purchase_price=100000,
+        sale_price=150000,
+        purchase_date="2020-01-01",
+        sale_date="2022-01-01",
+        indexation_benefit=True
+    )
+    print(f"  Capital Gain: ₹{result['capital_gain']}")
+    print(f"  Gain Type: {result['gain_type']}")
+    print(f"  Holding Period: {result['holding_period_days']} days")
+    print(f"  Tax Rate: {result['tax_rate']}%")
+    print(f"  Tax Liability: ₹{result['tax_liability']}")
+    print(f"  Net Gain: ₹{result['net_gain']}")
+    print()
+
+
 def main():
     """Run all calculator tests"""
     print("=== Humsafar Financial AI Assistant Calculator Tests ===\n")
     
-    # Test all calculators
+    # Test original 21 calculators
     test_emergency_funds_calculator()
     test_fixed_deposit_calculator()
     test_mutual_fund_goal_calculator()
@@ -202,7 +379,20 @@ def main():
     test_personal_loan_emi_calculator()
     test_net_worth_calculator()
     
+    # Test new 10 calculators
+    test_retirement_corpus_calculator()
+    test_child_education_goal_calculator()
+    test_home_loan_affordability_calculator()
+    test_loan_prepayment_calculator()
+    test_income_tax_calculator()
+    test_lump_sum_investment_calculator()
+    test_goal_based_multi_investment_planner()
+    test_debt_to_income_ratio_calculator()
+    test_asset_allocation_rebalancer()
+    test_capital_gains_tax_calculator()
+    
     print("=== All Tests Completed Successfully! ===")
+    print("✅ Total Calculators Tested: 31 (21 original + 10 new)")
 
 
 if __name__ == "__main__":

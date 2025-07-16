@@ -1,10 +1,10 @@
 # Humsafar Financial AI Assistant
 
-A comprehensive suite of financial calculators designed for AI-powered financial decision making and MCP (Model Context Protocol) tool integration. This package provides 21 specialized financial calculators, each optimized for LLM workflows and structured data exchange.
+A comprehensive suite of financial calculators designed for AI-powered financial decision making and MCP (Model Context Protocol) tool integration. This package provides 31 specialized financial calculators, each optimized for LLM workflows and structured data exchange.
 
 ## 🚀 Features
 
-### Core Financial Calculators
+### Core Financial Calculators (21 Original)
 
 1. **🚨 Emergency Funds Calculator** - Calculate required emergency fund coverage
 2. **🏦 Fixed Deposit Calculator** - Compute FD maturity and interest
@@ -28,6 +28,19 @@ A comprehensive suite of financial calculators designed for AI-powered financial
 20. **🏦 HDFC Bank Personal Loan Calculator** - HDFC Bank specific loan calculator
 21. **⚖️ Net Worth Calculator** - Calculate net worth and financial health
 
+### Enhanced Financial Calculators (10 New)
+
+22. **👴 Retirement Corpus Calculator** - Plan retirement savings based on current age, expenses, inflation
+23. **📚 Child Education Goal Calculator** - Estimate future education costs & plan SIP
+24. **🏡 Home Loan Affordability Calculator** - Estimate how much home loan user can afford
+25. **💰 Loan Prepayment Calculator** - Calculate interest saved or tenure reduced
+26. **📊 Income Tax Calculator (Old vs New)** - Compare tax liability under both regimes
+27. **💎 Lump Sum Investment Calculator** - Project value of one-time investment
+28. **🎯 Goal-Based Multi-Investment Planner** - Track multiple financial goals via SIPs
+29. **📈 Debt-to-Income Ratio Calculator** - Check financial leverage
+30. **⚖️ Asset Allocation Rebalancer** - Recommend mix of equity/debt/gold
+31. **🏛️ Capital Gains Tax Calculator** - Calculate STCG or LTCG based on asset type
+
 ## 🛠️ Installation
 
 ```bash
@@ -45,7 +58,12 @@ from humsafar_financial_ai.finance_calculators import (
     emergency_funds_calculator,
     fixed_deposit_calculator,
     mutual_fund_sip_calculator,
-    net_worth_calculator
+    net_worth_calculator,
+    retirement_corpus_calculator,
+    child_education_goal_calculator,
+    home_loan_affordability_calculator,
+    income_tax_calculator,
+    capital_gains_tax_calculator
 )
 
 # Calculate emergency fund requirement
@@ -84,6 +102,67 @@ liabilities = {
 }
 net_worth_result = net_worth_calculator(assets=assets, liabilities=liabilities)
 print(f"Net Worth: ₹{net_worth_result['net_worth']}")
+```
+
+### Enhanced Calculators Usage
+
+```python
+# Plan retirement corpus
+retirement_result = retirement_corpus_calculator(
+    current_age=30,
+    retirement_age=60,
+    monthly_expenses=50000,
+    inflation_rate=6.0,
+    expected_return=12.0,
+    current_savings=100000
+)
+print(f"Retirement Corpus Needed: ₹{retirement_result['retirement_corpus_needed']}")
+print(f"Monthly SIP Required: ₹{retirement_result['monthly_sip_needed']}")
+
+# Calculate child education goal
+education_result = child_education_goal_calculator(
+    child_current_age=5,
+    education_age=18,
+    current_education_cost=500000,
+    inflation_rate=8.0,
+    expected_return=12.0,
+    current_savings=50000
+)
+print(f"Future Education Cost: ₹{education_result['future_education_cost']}")
+print(f"Monthly SIP Needed: ₹{education_result['monthly_sip_needed']}")
+
+# Check home loan affordability
+affordability_result = home_loan_affordability_calculator(
+    monthly_income=100000,
+    existing_emis=20000,
+    interest_rate=8.5,
+    loan_tenure_years=20
+)
+print(f"Max Loan Amount: ₹{affordability_result['max_loan_amount']}")
+print(f"Property Value: ₹{affordability_result['property_value']}")
+
+# Compare tax regimes
+tax_result = income_tax_calculator(
+    annual_salary=1200000,
+    section_80c=150000,
+    hra_received=240000,
+    rent_paid=300000
+)
+print(f"Old Regime Tax: ₹{tax_result['old_regime_tax']}")
+print(f"New Regime Tax: ₹{tax_result['new_regime_tax']}")
+print(f"Recommended: {tax_result['recommended_regime']}")
+
+# Calculate capital gains tax
+capital_gains_result = capital_gains_tax_calculator(
+    asset_type="equity",
+    purchase_price=100000,
+    sale_price=150000,
+    purchase_date="2020-01-01",
+    sale_date="2022-01-01"
+)
+print(f"Capital Gain: ₹{capital_gains_result['capital_gain']}")
+print(f"Tax Liability: ₹{capital_gains_result['tax_liability']}")
+print(f"Net Gain: ₹{capital_gains_result['net_gain']}")
 ```
 
 ### Testing the Calculators
